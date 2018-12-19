@@ -1,17 +1,34 @@
 import React from 'react';
-import RecipeBody from './RecipeBody';
 
+// this is the main page. It:
+// displays the family/title of the recipe (i.e. shortcrust pastries)
+// displays a list of the genus/variations (i.e. sweet pastry, savory pastry, all-butter pastry, pastry for humidity)
+
+// if I click on 'sweet', it need to display either the most recent sweet version or the starred sweet version
+
+
+// for reference: specie = version
 class App extends React.Component {
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      recipeData: this.props.recipeData[0],// just gets the first family
+    }
+  }
+  
   render() {
+    const {recipeData} = this.state;
     return (
       <div>
-        <h1>Recipe Name</h1>
-        <p>this is a brief description of what this recipe is</p>
-        <picture>
-          <img src="https://images-gmi-pmc.edge-generalmills.com/173da066-c6b4-45dd-9b28-0d459cf6f169.jpg" alt="Apple Pie"/>
-        </picture>
-        <RecipeBody />
+        <h1>{recipeData.family}</h1>
+        <h4>A brief description of the thing, maybe 250 characters or so</h4>
+        <ul>
+          {
+            recipeData.variations.map(variation => 
+              <li>{variation.genus}</li>
+            )
+          }
+        </ul>
       </div>
     )
   }
