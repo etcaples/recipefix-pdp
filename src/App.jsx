@@ -29,12 +29,12 @@ class App extends React.Component {
           {
             recipeData.variations.map(variation => 
               <li>
-                <Link to={`/${variation.genus}`}>{variation.genus}</Link>
+                <Link to={`/shortcrust-pastry/${variation.genus}`}>{variation.genus}</Link>
               </li>
             )
           }
         </ul>
-          <Route exact path="/sweet" component={RecipePage} />
+          <Route path="/shortcrust-pastry/sweet" component={RecipePage} />
       </div>
     )
   }

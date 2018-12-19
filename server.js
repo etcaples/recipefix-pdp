@@ -4,7 +4,7 @@ const path = require('path');
 const PORT = 3000;
 const app = express();
 
-app.use('/', express.static(path.join(__dirname, 'public')));
+app.use('/shortcrust-pastry', express.static(path.join(__dirname, 'public')));
 
 app.listen(PORT, () => {
   console.log(`Listening on ${PORT}`);
