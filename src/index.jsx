@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-// set up router to ingest the right files
+import { BrowserRouter, Route } from 'react-router-dom';
+
 import App from './App';
 import exampleData from '../exampleData';
 
+// TODO:
+// path here && in server static should be family title
+
 ReactDOM.render(
   <BrowserRouter>
-    <App recipeData={exampleData} />
+      <App recipeData={exampleData}/>
   </BrowserRouter>,
-  document.getElementById('app'));
+  document.getElementById('app')
+);

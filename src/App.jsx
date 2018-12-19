@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Switch, Route } from 'react-router-dom';
+
+import RecipePage from './components/recipePage/RecipePage';
 
 // this is the main page. It:
 // displays the family/title of the recipe (i.e. shortcrust pastries)
@@ -27,11 +29,12 @@ class App extends React.Component {
           {
             recipeData.variations.map(variation => 
               <li>
-                <Link to={`${variation.genus}`}>{variation.genus}</Link>
+                <Link to={`/${variation.genus}`}>{variation.genus}</Link>
               </li>
             )
           }
         </ul>
+          <Route exact path="/sweet" component={RecipePage} />
       </div>
     )
   }
