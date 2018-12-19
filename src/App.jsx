@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // this is the main page. It:
 // displays the family/title of the recipe (i.e. shortcrust pastries)
@@ -25,7 +26,9 @@ class App extends React.Component {
         <ul>
           {
             recipeData.variations.map(variation => 
-              <li>{variation.genus}</li>
+              <li>
+                <Link to={`${variation.genus}`}>{variation.genus}</Link>
+              </li>
             )
           }
         </ul>
